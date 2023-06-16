@@ -18,8 +18,8 @@ const width = Dimensions.get('window').width - 40;
 const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.PRIMARY,
-        width: width / 2 / 10,
-        padding:8,
+        width: width / 2.2 - 10,
+        padding:11,
         borderRadius: 10
     },
     title: {

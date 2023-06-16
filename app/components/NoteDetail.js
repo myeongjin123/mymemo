@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15
     },
     time: {
-        textAling: 'right',
+        textAlign: 'right',
         fontSize: 12,
         opacity: 0.6
     },

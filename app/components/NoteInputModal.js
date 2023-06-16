@@ -100,8 +100,22 @@ const styles = StyleSheet.create({
         color: colors.DARK
     },
     title:{
-
+        height: 40,
+        marginBottom: 15,
+        fontWeight: 'bold'
     },
+    desc: {
+        height: 90
+    },
+    modalBG: {
+        flex: 1,
+        zIndex: -1
+    },
+    btnContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        paddingVertical: 15
+    }
 
 });
 

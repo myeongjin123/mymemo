@@ -7,7 +7,8 @@ import {
     Keyboard,
     StatusBar,
     FlatList,
-    TouchableWithoutFeedback
+    TouchableWithoutFeedback,
+    SafeAreaView
 } from 'react-native';
 import Note from '../components/Note';
 import NotFound from '../components/NotFound';
@@ -86,12 +87,12 @@ const NoteScreen = ({ user, navigation }) => {
     }
 
     return (
-        <>
+        <SafeAreaView style={styles.container}>
            <StatusBar barStyle="dark-content" backgroundColor={colors.LIGHT} />
            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                <View style={styles.container}>
-                  <Text>
-                    {user.name}님이 {greet}에 쓰심.  
+                  <Text style={styles.greet}>
+                    {user.name}님 {greet}입니다. 반갑습니다.  
                   </Text> 
                   {notes.length ? (
                     <SearchBar
@@ -142,10 +143,19 @@ const NoteScreen = ({ user, navigation }) => {
                 visible={modalVisible}
                 onClose={() => setModalVisible(false)}
             />
-        </>
+        </SafeAreaView>
     );
 };
 const styles = StyleSheet.create({
+    container:{
+
+    },
+    greet: {
+        fontSize:16,
+        fontWeight: 'bold',
+        marginVertical:15,
+        color: colors.DARK
+    },
     header: {
        fontSize: 15,
        fontWeight: 'bold'
@@ -168,7 +178,7 @@ const styles = StyleSheet.create({
         zIndex: -1
     },
     addBtn: {
-        position: 'absoulute',
+        position: 'absolute',
         right: 15,
         bottom: 50,
         zIndex: 1
